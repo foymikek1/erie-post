@@ -8,8 +8,9 @@ describe "user sees all articles", type: :feature do
 
       visit '/posts'
 
-     expect(page).to have_content(post_1.title)
-     expect(page).to have_content(post_2.title)
+     expect(page).to have_link(post_1.title)
+     expect(page).to have_link(post_2.title)
+     expect(page).to have_link("Create a New Post")
     end
   end
 end
