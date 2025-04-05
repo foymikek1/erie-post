@@ -7,7 +7,6 @@ describe "user delete post", type: :feature do
       post_2 = Post.create!(title: "Title 2", body: "Body 2")
 
       visit post_path(post_1)
-      save_and_open_page
 
       click_on "Delete Post"
       expect(current_path).to eq(posts_path)

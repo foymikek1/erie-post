@@ -1,4 +1,5 @@
 <h1><%= @post.title %></h1>
 <p><%= @post.body %></p>
 <%= link_to "<< Back to Posts List", posts_path %>
+<%= link_to "Edit", edit_post_path(@post) %>
 <%= button_to "Delete Post", post_path(@post), method: :delete, confirm: "Really delete the post?" %>
