@@ -11,7 +11,7 @@ describe "user craetes new post", type: :feature do
       fill_in "post[title]", with: "New Title!"
       fill_in "post[body]",  with: "New Body!"
       click_on "Create Post"
-save_and_open_page
+
      expect(page).to have_content("New Title!")
      expect(page).to have_content("New Body!")
     end
