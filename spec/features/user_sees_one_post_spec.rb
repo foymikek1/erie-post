@@ -19,4 +19,21 @@ describe "user sees one post", type: :feature do
      expect(page).to have_content(comment_2.body)     
     end
   end
+  describe "they fill in a comment form" do
+    it "displays the comment on the post show" do
+      post = Post.create!(title: "New Title", body: "New Body")
+
+      visit post_path(post)
+
+      fill_in "comment[author_name]", with: "ME!"
+      fill_in "comment[body]", with: "So many thoughts on this post."
+      click_on "Submit"
+
+      expect(current_path).to eq(post_path(post))
+      expect(page).to have_content("Post a Comment")
+      expect(page).to have_content("ME!")
+      expect(page).to have_content("So many thoughts on this post.")
+    end
+  end
+
 end
