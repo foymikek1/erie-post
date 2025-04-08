@@ -6,3 +6,4 @@ describe Tag, type: :model do
     it {should have_many(:posts).through(:taggings)}
   end
 end
+
