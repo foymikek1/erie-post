@@ -1,7 +1,10 @@
-<h1>Posts Tagged with <%= @tag.name %></h1>
+<h1>Posts Tagged with: <%= @tag.name %></h1>
 
 <ul>
   <% @tag.posts.each do |post| %>
     <li><%= link_to post.title, post_path(post) %></li>
   <% end %>
 </ul>
+<%= button_to "Delete Tag", tag_path(@tag), method: :delete %>
+<br><br/>
+<%= link_to "<< Back To All Tags", tags_path %>
